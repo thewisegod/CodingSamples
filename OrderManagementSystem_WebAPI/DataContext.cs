@@ -11,7 +11,6 @@ namespace OrderManagementSystem_WebAPI
     public class DataContext : DbContext
     {
         public DataContext() : base("DataContext") { }
-
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
