@@ -138,10 +138,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Api\OrderController.cs" />
+    <Compile Include="Controllers\Api\SupplierController.cs" />
     <Compile Include="Controllers\Api\ProductController.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Controllers\Api\CustomerController.cs" />
-    <Compile Include="Controllers\Api\OrderProductsController.cs" />
+    <Compile Include="Controllers\Api\OrderItemController.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

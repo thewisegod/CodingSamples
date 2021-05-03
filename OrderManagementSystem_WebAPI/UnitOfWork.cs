@@ -15,10 +15,14 @@ namespace OrderManagementSystem_WebAPI
         private GenericRepository<Customer> _customerRepository;
         private GenericRepository<Product> _productRepository;
         private GenericRepository<Order> _orderRepository;
+        private GenericRepository<OrderItem> _orderItemRepository;
+        private GenericRepository<Supplier> _supplierRepository;
 
         public GenericRepository<Customer> CustomerRepository => _customerRepository ?? (_customerRepository = new GenericRepository<Customer>(_context));
         public GenericRepository<Product> ProductRepository => _productRepository ?? (_productRepository = new GenericRepository<Product>(_context));
         public GenericRepository<Order> OrderRepository => _orderRepository ?? (_orderRepository = new GenericRepository<Order>(_context));
+        public GenericRepository<OrderItem> OrderItemRepository => _orderItemRepository ?? (_orderItemRepository = new GenericRepository<OrderItem>(_context));
+        public GenericRepository<Supplier> SupplierRepository => _supplierRepository ?? (_supplierRepository = new GenericRepository<Supplier>(_context));
 
         public void Complete()
         {
