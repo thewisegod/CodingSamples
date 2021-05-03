@@ -156,14 +156,6 @@
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bundles\favicon.ico" />
-    <Content Include="bundles\fontawesome-webfont.svg" />
-    <Content Include="bundles\index.html" />
-    <Content Include="bundles\main.js" />
-    <Content Include="bundles\polyfills.js" />
-    <Content Include="bundles\runtime.js" />
-    <Content Include="bundles\styles.css" />
-    <Content Include="bundles\vendor.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -173,28 +165,6 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Logs\Errors\ErrorLogs.txt" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="bundles\fontawesome-webfont.eot" />
-    <Content Include="bundles\fontawesome-webfont.ttf" />
-    <Content Include="bundles\fontawesome-webfont.woff" />
-    <Content Include="bundles\fontawesome-webfont.woff2" />
-    <Content Include="bundles\main.js.map" />
-    <Content Include="bundles\polyfills.js.map" />
-    <Content Include="bundles\runtime.js.map" />
-    <Content Include="bundles\styles.css.map" />
-    <Content Include="bundles\vendor.js.map" />
-    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.4.1.js" />
-    <Content Include="Scripts\jquery-3.4.1.min.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -216,8 +186,6 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ErrorLogger\ErrorLogger.csproj">
