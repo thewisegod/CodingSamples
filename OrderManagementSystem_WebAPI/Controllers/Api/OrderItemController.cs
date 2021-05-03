@@ -2,7 +2,7 @@
 using ErrorLogger;
 using Microsoft.Ajax.Utilities;
 using Newtonsoft.Json;
-using OrderItemManagementSystem_WebAPI.Models;
+using OrderManagementSystem_WebAPI.Models;
 using OrderManagementSystem_WebAPI.Models;
 using System;
 using System.Collections.Generic;
