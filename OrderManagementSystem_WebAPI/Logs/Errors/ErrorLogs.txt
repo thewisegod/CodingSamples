@@ -1,0 +1,26 @@
+﻿Date And Time: 5/2/2021 2:45:56 PM
+Error Message: Invalid Customer Data Post Attempt
+-----------------------------------------------------------------------------------
+Date And Time: 5/2/2021 3:20:12 PM
+Error Message: System.InvalidOperationException: An object with the same key already exists in the ObjectStateManager. The ObjectStateManager cannot track multiple objects with the same key.
+   at System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   at System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   at System.Data.Entity.DbSet`1.Attach(TEntity entity)
+   at OrderManagementSystem_WebAPI.Repositories.Concrete.GenericRepository`1.Update(T entity) in C:\Users\licia\source\repos\CodingSamples\OrderManagementSystem_WebAPI\Repositories\Concrete\GenericRepository.cs:line 72
+   at OrderManagementSystem_WebAPI.Controllers.Api.CustomerController.Put(Customer customer) in C:\Users\licia\source\repos\CodingSamples\OrderManagementSystem_WebAPI\Controllers\Api\CustomerController.cs:line 75
+--------------------------------------------------------------------------------
+Date And Time: 5/2/2021 3:23:05 PM
+Error Message: System.InvalidOperationException: An object with the same key already exists in the ObjectStateManager. The ObjectStateManager cannot track multiple objects with the same key.
+   at System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   at System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   at System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   at System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   at OrderManagementSystem_WebAPI.Repositories.Concrete.GenericRepository`1.Update(T entity) in C:\Users\licia\source\repos\CodingSamples\OrderManagementSystem_WebAPI\Repositories\Concrete\GenericRepository.cs:line 72
+   at OrderManagementSystem_WebAPI.Controllers.Api.CustomerController.Put(Customer customer) in C:\Users\licia\source\repos\CodingSamples\OrderManagementSystem_WebAPI\Controllers\Api\CustomerController.cs:line 75
+--------------------------------------------------------------------------------
