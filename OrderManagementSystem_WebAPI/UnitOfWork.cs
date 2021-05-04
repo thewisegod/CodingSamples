@@ -1,17 +1,13 @@
 ﻿using OrderManagementSystem_WebAPI.Models;
 using OrderManagementSystem_WebAPI.Repositories.Concrete;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Web;
 
 namespace OrderManagementSystem_WebAPI
 {
     public class UnitOfWork : IDisposable
-    {
-        private readonly DataContext _context = new DataContext();
+    {   
         private bool _disposed = false;
+        private readonly DataContext _context = new DataContext();
         private GenericRepository<Customer> _customerRepository;
         private GenericRepository<Product> _productRepository;
         private GenericRepository<Order> _orderRepository;

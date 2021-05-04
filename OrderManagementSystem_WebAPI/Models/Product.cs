@@ -23,7 +23,7 @@ namespace OrderManagementSystem_WebAPI.Models
         [MaxLength(30, ErrorMessage = "The max length of the Package field is 30 characters")]
         public string Package { get; set; }
 
-        public bool? IsDiscontinued { get; set; }
+        public bool IsDiscontinued { get; set; }
 
         public Supplier Suppliers { get; set; }
     }

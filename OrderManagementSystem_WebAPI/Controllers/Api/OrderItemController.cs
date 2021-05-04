@@ -1,17 +1,6 @@
-﻿
-using ErrorLogger;
-using Microsoft.Ajax.Utilities;
-using Newtonsoft.Json;
-using OrderManagementSystem_WebAPI.Models;
-using OrderManagementSystem_WebAPI.Models;
-using System;
+﻿using OrderManagementSystem_WebAPI.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using System.Web.Script.Serialization;
 
 namespace OrderManagementSystem_WebAPI.Controllers.Api
 {
