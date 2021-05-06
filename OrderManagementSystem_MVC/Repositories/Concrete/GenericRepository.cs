@@ -1,4 +1,4 @@
-﻿using OrderManagementSystem_WebAPI.Repositories.Abstract;
+﻿using OrderManagementSystem_MVC.Repositories.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
 
-namespace OrderManagementSystem_WebAPI.Repositories.Concrete
+namespace OrderManagementSystem_MVC.Repositories.Concrete
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
@@ -48,7 +48,10 @@ namespace OrderManagementSystem_WebAPI.Repositories.Concrete
 
         public virtual T GetByID(int id) => _dbSet.Find(id);
 
-        public virtual void Insert(T entity) => _dbSet.Add(entity);
+        public virtual void Insert(T entity)
+        {
+            _dbSet.Add(entity);
+        }
 
         public virtual void Delete(int id)
         {

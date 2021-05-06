@@ -28,8 +28,18 @@ namespace OrderManagementSystem_WebAPI.Controllers.Api
 
         [HttpPost]
         [Route("customers/add")]
-        public IHttpActionResult Post([FromBody] Customer customer) =>
-            Helper.Post<Customer>(this, _uow, _uow.CustomerRepository, customer, ModelState);
+        public IHttpActionResult Post([FromBody] Customer customer)
+        {
+            if (EntityAlreadyExists(customer))
+            {
+                return BadRequest("The Customer that you are attempting to add already exists");
+            }
+
+            return Helper.Post<Customer>(this, _uow, _uow.CustomerRepository, customer, ModelState);
+        }
+
+        private bool EntityAlreadyExists(Customer customer) =>
+            _uow.CustomerRepository.Get(_ => _.FirstName == customer.FirstName && _.LastName == customer.LastName && _.Phone == customer.Phone).Any();
 
         [HttpPut]
         [Route("customers/update")]

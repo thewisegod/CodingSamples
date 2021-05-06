@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLogger", "ErrorLogger\ErrorLogger.csproj", "{D0318DA1-DFE8-4B2E-ABCA-B1C12DC44752}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVC", "MVC", "{6A5A5955-2402-4D46-BD67-F1B787E3E34A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagementSystem_MVC", "OrderManagementSystem_MVC\OrderManagementSystem_MVC.csproj", "{C8A11CA2-9D53-4E60-BB2E-57E2AF180EF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,10 @@ Global
 		{D0318DA1-DFE8-4B2E-ABCA-B1C12DC44752}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0318DA1-DFE8-4B2E-ABCA-B1C12DC44752}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0318DA1-DFE8-4B2E-ABCA-B1C12DC44752}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8A11CA2-9D53-4E60-BB2E-57E2AF180EF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8A11CA2-9D53-4E60-BB2E-57E2AF180EF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8A11CA2-9D53-4E60-BB2E-57E2AF180EF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8A11CA2-9D53-4E60-BB2E-57E2AF180EF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +49,7 @@ Global
 		{3D7D7E4B-8635-48FD-AF6D-7292DE88ED63} = {59F92DCD-A60B-48D4-915F-1DE17AD53B11}
 		{CBBE623B-08D8-4BB4-999B-3358F7537AD4} = {59F92DCD-A60B-48D4-915F-1DE17AD53B11}
 		{D0318DA1-DFE8-4B2E-ABCA-B1C12DC44752} = {FAF36CCE-CF34-46AD-854C-051847980D8E}
+		{C8A11CA2-9D53-4E60-BB2E-57E2AF180EF5} = {6A5A5955-2402-4D46-BD67-F1B787E3E34A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {463C1027-2F42-4D1E-B225-84A7C9E7AB92}
