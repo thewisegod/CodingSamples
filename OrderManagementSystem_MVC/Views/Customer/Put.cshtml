@@ -1,0 +1,90 @@
+﻿@model OrderManagementSystem_MVC.ViewModels.CustomerViewModel
+
+@{
+    ViewBag.Title = "Put";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Put</h2>
+
+<form method="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">&nbsp;</div>
+            <div class="col-xs-12 col-sm-2">
+                <span>First Name</span>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                @Html.TextBoxFor(_ => _.FirstName, new { @class="form-control", @maxlength = "40", @required = true })
+            </div>
+            <div class="col-xs-12 col-sm-3">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">&nbsp;</div>
+            <div class="col-xs-12 col-sm-2">
+                <span>Last Name</span>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                @Html.TextBoxFor(_ => _.LastName, new { @class="form-control", @maxlength = "40", @required = true })
+            </div>
+            <div class="col-xs-12 col-sm-3">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">&nbsp;</div>
+            <div class="col-xs-12 col-sm-2">
+                <span>Phone</span>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                @Html.TextBoxFor(_ => _.Phone, new { @class = "form-control", @required = true })
+                @Html.ValidationMessageFor(_ => _.Phone)
+            </div>
+            <div class="col-xs-12 col-sm-3">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">&nbsp;</div>
+            <div class="col-xs-12 col-sm-2">
+                <span>City</span>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                 @Html.TextBoxFor(_ => _.City, new { @class="form-control", @maxlength = "40", @required = true })
+            </div>
+            <div class="col-xs-12 col-sm-3">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">&nbsp;</div>
+            <div class="col-xs-12 col-sm-2">
+                <span>Country</span>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                @Html.TextBoxFor(_ => _.Country, new { @class="form-control", @maxlength = "40", @required = true })
+            </div>
+            <div class="col-xs-12 col-sm-3">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-5">&nbsp;</div>
+            <div class="col-xs-12 col-sm-4">
+                <input id="submit" name="submit" type="submit" value="Update Customer" class="btn btn-primary" />
+            </div>
+            <div class="col-xs-12 col-sm-3">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                @if (Model != null)
+                {
+                    if (!string.IsNullOrEmpty(Model.Message))
+                    {
+                        if (Model.Message.Contains("successfully"))
+                        {
+                            <span class="success">@Model.Message</span>
+                        }
+                        else
+                        {
+                            <span class="alert-danger">@Model.Message</span>
+                        }
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</form>
+

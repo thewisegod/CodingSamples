@@ -14,10 +14,18 @@ namespace OrderManagementSystem_MVC.Controllers
         private readonly UnitOfWork _uow = new UnitOfWork();
 
         [HttpGet]
-        public IEnumerable<Customer> Get() => _uow.CustomerRepository.Get();
+        public ViewResult Get()
+        {
+            var cvmList = new List<CustomerViewModel>();
+            var customers = _uow.CustomerRepository.Get();
+            foreach (var customer in customers)
+            {
+                cvmList.Add(Helper.CopyModelToViewModel<Customer, CustomerViewModel>(customer));
+            }
+            return View(cvmList);
+        }
 
-        [HttpGet]
-        public Customer Get(int id) => _uow.CustomerRepository.GetByID(id);
+        public ViewResult Details(int id) => LoadViewById(id, "Details");
 
         [HttpGet]
         public ViewResult Post() => View();
@@ -31,7 +39,7 @@ namespace OrderManagementSystem_MVC.Controllers
             }
             else
             {
-                if (EntityAlreadyExists(cvm))
+                if (CustomerAlreadyExists(cvm))
                 {
                     cvm.Message = "Invalid Customer Add Attempt";
                     return View(cvm);
@@ -52,17 +60,52 @@ namespace OrderManagementSystem_MVC.Controllers
             }
         }
 
-        private bool EntityAlreadyExists(CustomerViewModel cvm) =>
+        private bool CustomerAlreadyExists(CustomerViewModel cvm) =>
             _uow.CustomerRepository.Get(_ => _.FirstName == cvm.FirstName && _.LastName == cvm.LastName && _.Phone == cvm.Phone).Any();
 
-        //[HttpPut]
-        //[Route("customers/update")]
-        //public IHttpActionResult Put([FromBody] Customer customer) =>
-        //    Helper.Put<Customer>(this, _uow, _uow.CustomerRepository, customer, ModelState);
+        [HttpGet]
+        public ViewResult Put(int id) => LoadViewById(id, "Put");
 
-        //[HttpDelete]
-        //[Route("customers/delete/{id}")]
-        //public IHttpActionResult Delete(int id) =>
-        //     Helper.Delete<Customer>(this, _uow, _uow.CustomerRepository, id, ModelState);
+        [HttpPut]
+        public ViewResult Put(CustomerViewModel cvm)
+        {
+            if (cvm == null)
+            {
+                return View(cvm);
+            }
+            else
+            {
+                cvm.Message = Helper.Put<Customer>(_uow, _uow.CustomerRepository,
+                     new Customer()
+                     {
+                         FirstName = cvm.FirstName,
+                         LastName = cvm.LastName,
+                         Phone = cvm.Phone,
+                         City = cvm.City,
+                         Country = cvm.Country
+                     },
+                     ModelState);
+
+                return View(cvm);
+            }
+        }
+
+        [HttpDelete]
+        public ViewResult Delete(int id)
+        {
+            var cvm = new CustomerViewModel()
+            {
+                Message = Helper.Delete<Customer>(_uow, _uow.CustomerRepository, id, ModelState)
+            };
+
+            return View(cvm);
+        }
+
+        private ViewResult LoadViewById(int id, string view)
+        {
+            var customer = _uow.CustomerRepository.GetByID(id);
+            var cvm = Helper.CopyModelToViewModel<Customer, CustomerViewModel>(customer);
+            return View(view, cvm);
+        }
     }
 }
